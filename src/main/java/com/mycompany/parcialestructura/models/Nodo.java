@@ -11,10 +11,12 @@ package com.mycompany.parcialestructura.models;
 public class Nodo {
 	
 	private Estudiante estudiante;
+	private String pelicula;
 	private Nodo enlace;
 
-	public Nodo(Estudiante estudiante) {
+	public Nodo(Estudiante estudiante, String pelicula) {
 		this.estudiante = estudiante;
+		this.pelicula = pelicula;
 		this.enlace = null;
 	}
 
@@ -33,6 +35,13 @@ public class Nodo {
 	public void setEnlace(Nodo enlace) {
 		this.enlace = enlace;
 	}
-	
+
+	public String getPelicula() {
+		return pelicula;
+	}
+
+	public void setPelicula(String pelicula) {
+		this.pelicula = pelicula;
+	}
 	
 }
