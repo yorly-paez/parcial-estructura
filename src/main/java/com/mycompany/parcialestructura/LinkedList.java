@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.mycompany.parcialestructura;
 
 import com.mycompany.parcialestructura.models.Estudiante;
@@ -9,13 +6,10 @@ import com.mycompany.parcialestructura.models.Nodo;
 import java.time.LocalDate;
 import java.time.Period;
 
-/**
- *
- * @author yorly_quintero
- */
+
 public class LinkedList {
 	Nodo head;
-	public String[] peliculas = {"peli1", "peli2", "peli3"};
+	public String[] peliculas = {"Avatar", "Titanic", "Avengers Endgame"};
 	
 	LinkedList(){
 		head = null;
@@ -131,5 +125,16 @@ public class LinkedList {
 		}
 		return acco;
 	}
+        
+        public int entradasVendidas(){
+            
+            return 1;
+        }
+
+    public String[] getPeliculas() {
+        return peliculas;
+    }
+        
+        
 	
 }
