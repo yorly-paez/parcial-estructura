@@ -4,6 +4,8 @@
  */
 package com.mycompany.parcialestructura.models;
 
+import java.time.LocalDate;
+
 /**
  *
  * @author yorly_quintero
@@ -12,10 +14,10 @@ public class Estudiante {
 	
 	private String documento;
 	private String nombre;
-	private String fechaNacimiento;
+	private LocalDate fechaNacimiento;
 	private String sexo;
 
-	public Estudiante(String documento, String nombre, String fechaNacimiento, String sexo) {
+	public Estudiante(String documento, String nombre, LocalDate fechaNacimiento, String sexo) {
 		this.documento = documento;
 		this.nombre = nombre;
 		this.fechaNacimiento = fechaNacimiento;
@@ -38,11 +40,11 @@ public class Estudiante {
 		this.nombre = nombre;
 	}
 
-	public String getFechaNacimiento() {
+	public LocalDate getFechaNacimiento() {
 		return fechaNacimiento;
 	}
 
-	public void setFechaNacimiento(String fechaNacimiento) {
+	public void setFechaNacimiento(LocalDate fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
