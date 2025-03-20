@@ -15,15 +15,15 @@ import java.time.Period;
  */
 public class LinkedList {
 	Nodo head;
-	public LocalDate fechaActual = LocalDate.now(); 
+	public String[] peliculas = {"peli1", "peli2", "peli3"};
 	
 	LinkedList(){
 		head = null;
 	}
 	
-	public void comprar(String documento, String nombre, LocalDate fechaNacimiento, String pelicula, String sexo){
+	public void comprar(String documento, String nombre, LocalDate fechaNacimiento, int[] cantEntradas, String sexo){
 		Estudiante estudiante = new Estudiante(documento, nombre, fechaNacimiento, sexo);
-		Nodo nuevoNodo = new Nodo(estudiante, pelicula);
+		Nodo nuevoNodo = new Nodo(estudiante, cantEntradas);
 		if (head == null){
 			head = nuevoNodo;
 		} else {
@@ -35,9 +35,68 @@ public class LinkedList {
 		}
 	}
 	
+	public boolean validar(String documento){
+		Nodo temp = head;
+		while (temp != null){
+			if (temp.getEstudiante().getNombre().equals(documento)){
+				return true;
+			}
+			temp = temp.getEnlace();
+		}
+		return false;
+	}
+	
+	public String contarEntradas(String documento){
+		Nodo temp = head;
+		int acco = 0;
+		String nombre = "";
+		loop: 
+		while (temp != null){
+			if (temp.getEstudiante().getNombre().equals(documento)){
+				int[] entradas = temp.getCantEntradas();
+				for (int i = 0; i < entradas.length; i++){
+					acco += entradas[i];
+				}
+				nombre = temp.getEstudiante().getNombre();
+				break loop;
+			}
+			temp = temp.getEnlace();
+		}
+		return "Estudiante" + nombre + "\nEntradas adquiridas: " + acco;
+	}
+	
+	public String peliConMasMujeres(){
+		Nodo temp = head;
+		int peli1 = 0;
+		int peli2 = 0;
+		int peli3 = 0;
+		while (temp != null){
+			if (temp.getEstudiante().getSexo().equals("F")){
+				int[] entradas = temp.getCantEntradas();
+				peli1 += entradas[0];
+				peli2 += entradas[1];
+				peli3 += entradas[2];
+			}
+			temp = temp.getEnlace();
+		}
+		int[] comprasMujeres = {peli1, peli2, peli3};
+		int mayorCompra = Integer.MIN_VALUE;
+		int index = -1;
+		for (int i = 0; i < comprasMujeres.length; i++){
+			if (comprasMujeres[i] > mayorCompra){
+				mayorCompra = comprasMujeres[i];
+				index = i;
+			}
+		}
+		String message = "Película que más mujeres compraron: " 
+			+ peliculas[index] + " con un total de " + mayorCompra + "compras";
+		return message;
+	}
+	
 	public int adultosMayores(){
 		Nodo temp = head;
 		int acco = 0;
+		LocalDate fechaActual = LocalDate.now(); 
 		while (temp != null){
 			LocalDate fechaNacimiento = temp.getEstudiante().getFechaNacimiento();
 			int age = Period.between(fechaNacimiento, fechaActual).getYears();
@@ -72,7 +131,5 @@ public class LinkedList {
 		}
 		return acco;
 	}
-	/*Si la lista esta vacia los botones deben estar bloquedos menos el de comprar 
-	Solo se puede comprar una entrada para una película
-	*/
+	
 }
