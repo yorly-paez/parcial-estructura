@@ -66,9 +66,8 @@ public class Escenario {
 			}
 			visitas = 0;
 		}
-		String message = "Escenario: " + escenarios[n] + 
-		"\nDía con mayor numero de visitas: " + dia +
-		"\nCantidad: " + mayorCantidadVisitas;
+		String message = "Día con mayor número de visitas: " + dia +
+		"\nCantidad de asistencias: " + mayorCantidadVisitas;
 		return message;
 	}
 	
@@ -87,9 +86,8 @@ public class Escenario {
 			}
 			visitas = 0;
 		}
-		String message = "Escenario: " + escenarios[n] + 
-		"\nDía con mayor numero de visitas: " + dia +
-		"\nCantidad: " + menorCantidadVisitas;
+		String message = "Día con menor número de visitas: " + dia +
+		"\nCantidad de asistencias: " + menorCantidadVisitas;
 		return message;
 	}
 	
@@ -151,13 +149,15 @@ public class Escenario {
 	}
 	
 	//Promedio de visitantes por día para un escenario en específico
-	public double promediarVisitantes(int n){
+	public String promediarVisitantes(int n){
 		double accu = 0;
 		double acco = 6; //Valor fijo (Número de días en la semana)
 		for (int c = 0; c < asistencias[n].length; c++){
 			accu += asistencias[n][c];
 		}
-		return accu / acco;
+		double promedio = (double) accu / acco;
+		double promedioRound = Math.round(promedio * 100.0) / 100.0;
+		return "Promedio de visitas diarias: " + promedioRound;
 	}
 	
 	//Total de visitas en la semana

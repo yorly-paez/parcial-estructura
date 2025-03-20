@@ -41,32 +41,41 @@
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="totalVisitantesEsc" max="32767" attributes="0"/>
-                          <Component id="masVisitasRestaurante" alignment="0" max="32767" attributes="0"/>
-                          <Component id="escMenosVisitado" alignment="0" max="32767" attributes="0"/>
-                          <Component id="escMasVisitado" alignment="0" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="promedioVisitantes" max="32767" attributes="0"/>
-                          <Component id="diaMasVisitantes" max="32767" attributes="0"/>
-                          <Component id="diaMenosVisitantes" pref="190" max="32767" attributes="0"/>
-                          <Component id="jComboBox1" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="separador" max="32767" attributes="0"/>
                   </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="totalVisitantesEsc" max="32767" attributes="0"/>
+                                  <Component id="diaMasVisitantes" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="escMasVisitado" alignment="0" pref="227" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="promedioVisitantes" min="-2" pref="227" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="escMenosVisitado" alignment="1" min="-2" pref="227" max="-2" attributes="0"/>
+                                      <Component id="diaMenosVisitantes" alignment="1" min="-2" pref="227" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="0" pref="25" max="32767" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="146" max="-2" attributes="0"/>
+              <Component id="informacionEscenario" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -76,25 +85,22 @@
               <Component id="jLabel1" min="-2" pref="34" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="totalVisitantesEsc" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="promedioVisitantes" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="escMasVisitado" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="masVisitasRestaurante" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="diaMasVisitantes" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="escMenosVisitado" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="diaMenosVisitantes" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="totalVisitantesEsc" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="escMenosVisitado" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="escMasVisitado" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="informacionEscenario" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
               <Component id="separador" min="-2" pref="10" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jButton1" min="-2" max="-2" attributes="0"/>
@@ -121,15 +127,18 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="comprar entrada"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JSeparator" name="separador">
     </Component>
-    <Component class="javax.swing.JButton" name="masVisitasRestaurante">
+    <Component class="javax.swing.JButton" name="informacionEscenario">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Dia con m&#xe1;s visitas para el restaurante"/>
+        <Property name="text" type="java.lang.String" value="Consultar informaci&#xf3;n de un escenario"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="masVisitasRestauranteActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="informacionEscenarioActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="escMenosVisitado">
@@ -158,7 +167,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="diaMasVisitantes">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Dia con mas visitantes"/>
+        <Property name="text" type="java.lang.String" value="D&#xed;a con m&#xe1;s visitantes"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="diaMasVisitantesActionPerformed"/>
@@ -166,7 +175,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="diaMenosVisitantes">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Dia con menos visitantes"/>
+        <Property name="text" type="java.lang.String" value="D&#xed;a con menos visitantes"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="diaMenosVisitantesActionPerformed"/>
@@ -174,30 +183,11 @@
     </Component>
     <Component class="javax.swing.JButton" name="escMasVisitado">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Escenario mas visitado"/>
+        <Property name="text" type="java.lang.String" value="Escenario m&#xe1;s visitado"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="escMasVisitadoActionPerformed"/>
       </Events>
-    </Component>
-    <Component class="javax.swing.JComboBox" name="jComboBox1">
-      <Properties>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="5">
-            <StringItem index="0" value="Selecciona el escenario"/>
-            <StringItem index="1" value="GYM"/>
-            <StringItem index="2" value="Teatro Bellas Artes"/>
-            <StringItem index="3" value="Canchas sint&#xe9;ticas"/>
-            <StringItem index="4" value="Restaurantes escolar"/>
-          </StringArray>
-        </Property>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox1ActionPerformed"/>
-      </Events>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-      </AuxValues>
     </Component>
   </SubComponents>
 </Form>

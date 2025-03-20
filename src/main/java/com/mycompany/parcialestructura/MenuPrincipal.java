@@ -2,6 +2,7 @@
 package com.mycompany.parcialestructura;
 
 import java.awt.Color;
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 
 
@@ -22,14 +23,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 jLabel1 = new javax.swing.JLabel();
                 jButton1 = new javax.swing.JButton();
                 separador = new javax.swing.JSeparator();
-                masVisitasRestaurante = new javax.swing.JButton();
+                informacionEscenario = new javax.swing.JButton();
                 escMenosVisitado = new javax.swing.JButton();
                 totalVisitantesEsc = new javax.swing.JButton();
                 promedioVisitantes = new javax.swing.JButton();
                 diaMasVisitantes = new javax.swing.JButton();
                 diaMenosVisitantes = new javax.swing.JButton();
                 escMasVisitado = new javax.swing.JButton();
-                jComboBox1 = new javax.swing.JComboBox<>();
 
                 jMenu1.setText("jMenu1");
 
@@ -43,11 +43,16 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 jLabel1.setOpaque(true);
 
                 jButton1.setText("comprar entrada");
-
-                masVisitasRestaurante.setText("Dia con más visitas para el restaurante");
-                masVisitasRestaurante.addActionListener(new java.awt.event.ActionListener() {
+                jButton1.addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                masVisitasRestauranteActionPerformed(evt);
+                                jButton1ActionPerformed(evt);
+                        }
+                });
+
+                informacionEscenario.setText("Consultar información de un escenario");
+                informacionEscenario.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                informacionEscenarioActionPerformed(evt);
                         }
                 });
 
@@ -72,31 +77,24 @@ public class MenuPrincipal extends javax.swing.JFrame {
                         }
                 });
 
-                diaMasVisitantes.setText("Dia con mas visitantes");
+                diaMasVisitantes.setText("Día con más visitantes");
                 diaMasVisitantes.addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {
                                 diaMasVisitantesActionPerformed(evt);
                         }
                 });
 
-                diaMenosVisitantes.setText("Dia con menos visitantes");
+                diaMenosVisitantes.setText("Día con menos visitantes");
                 diaMenosVisitantes.addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {
                                 diaMenosVisitantesActionPerformed(evt);
                         }
                 });
 
-                escMasVisitado.setText("Escenario mas visitado");
+                escMasVisitado.setText("Escenario más visitado");
                 escMasVisitado.addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {
                                 escMasVisitadoActionPerformed(evt);
-                        }
-                });
-
-                jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona el escenario", "GYM", "Teatro Bellas Artes", "Canchas sintéticas", "Restaurantes escolar" }));
-                jComboBox1.addActionListener(new java.awt.event.ActionListener() {
-                        public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                jComboBox1ActionPerformed(evt);
                         }
                 });
 
@@ -108,27 +106,31 @@ public class MenuPrincipal extends javax.swing.JFrame {
                         .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(layout.createSequentialGroup()
-                                                .addGap(17, 17, 17)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                        .addComponent(totalVisitantesEsc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                        .addComponent(masVisitasRestaurante, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                        .addComponent(escMenosVisitado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                        .addComponent(escMasVisitado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                        .addComponent(promedioVisitantes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                        .addComponent(diaMasVisitantes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                        .addComponent(diaMenosVisitantes, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
-                                                        .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addGap(18, 18, 18)
-                                                .addComponent(jButton1)
-                                                .addGap(0, 0, Short.MAX_VALUE))
-                                        .addGroup(layout.createSequentialGroup()
                                                 .addContainerGap()
-                                                .addComponent(separador)))
+                                                .addComponent(separador))
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addGap(18, 18, 18)
+                                                                .addComponent(jButton1))
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addGap(17, 17, 17)
+                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                                        .addComponent(totalVisitantesEsc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                        .addComponent(diaMasVisitantes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                        .addComponent(escMasVisitado, javax.swing.GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE))
+                                                                .addGap(50, 50, 50)
+                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                        .addComponent(promedioVisitantes, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                .addComponent(escMenosVisitado, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                .addComponent(diaMenosVisitantes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                                .addGap(0, 25, Short.MAX_VALUE)))
                                 .addContainerGap())
+                        .addGroup(layout.createSequentialGroup()
+                                .addGap(146, 146, 146)
+                                .addComponent(informacionEscenario)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 );
                 layout.setVerticalGroup(
                         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -136,21 +138,19 @@ public class MenuPrincipal extends javax.swing.JFrame {
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(promedioVisitantes)
-                                        .addComponent(escMasVisitado))
+                                        .addComponent(totalVisitantesEsc)
+                                        .addComponent(promedioVisitantes))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(masVisitasRestaurante)
-                                        .addComponent(diaMasVisitantes))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(diaMasVisitantes)
+                                        .addComponent(diaMenosVisitantes))
+                                .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(escMenosVisitado)
-                                        .addComponent(diaMenosVisitantes))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(totalVisitantesEsc)
-                                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(37, 37, 37)
+                                        .addComponent(escMasVisitado))
+                                .addGap(18, 18, 18)
+                                .addComponent(informacionEscenario)
+                                .addGap(25, 25, 25)
                                 .addComponent(separador, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButton1)
@@ -169,9 +169,49 @@ public class MenuPrincipal extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, esc1.escenarioMenosVisitado());
     }//GEN-LAST:event_escMenosVisitadoActionPerformed
 
-    private void masVisitasRestauranteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_masVisitasRestauranteActionPerformed
-        JOptionPane.showMessageDialog(null, esc1.diaMasVisitado(3));
-    }//GEN-LAST:event_masVisitasRestauranteActionPerformed
+    private void informacionEscenarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_informacionEscenarioActionPerformed
+        String[] escenarios = {"GYM", "Teatro Bellas Artes", "Canchas Sintéticas" , "Restaurante Escolar"};
+
+    // Crear el JComboBox con las opciones
+    JComboBox<String> comboBox = new JComboBox<>(escenarios);
+
+    // Mostrar un cuadro de diálogo con el JComboBox
+    int opcion = JOptionPane.showConfirmDialog(
+        this, // El JFrame principal
+        comboBox, // El JComboBox dentro del cuadro de diálogo
+        "Seleccione un Escenario", // Título del cuadro
+        JOptionPane.OK_CANCEL_OPTION, // Botones OK y Cancel
+        JOptionPane.QUESTION_MESSAGE // Icono de pregunta
+    );
+
+    // Verificar si el usuario presionó "OK"
+    if (opcion == JOptionPane.OK_OPTION) {
+        String seleccionado = (String) comboBox.getSelectedItem(); // Obtener la opción seleccionada
+        int index;
+	switch (seleccionado){
+		case "GYM":	
+			index = 0;
+			break;
+		case "Teatro Bellas Artes":
+			index = 1;
+			break;
+		case "Canchas Sintéticas":
+			index = 2;
+			break;
+		case "Restaurante Escolar":
+			index = 3;
+			break;
+		default:
+			index = -1;
+	}
+	String diaMas = esc1.diaMasVisitado(index);
+	String diaMenos = esc1.diaMenosVisitado(index);
+	String promedio = esc1.promediarVisitantes(index);
+	String message = "Escenario: " + seleccionado + "\n"
+		+ diaMas + "\n" + diaMenos + "\n" + promedio;
+	JOptionPane.showMessageDialog(this, message); 
+    }
+    }//GEN-LAST:event_informacionEscenarioActionPerformed
 
     private void promedioVisitantesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_promedioVisitantesActionPerformed
         JOptionPane.showMessageDialog(null, esc1.promedioTotal());
@@ -189,9 +229,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, esc1.diaConMenosVisitas());
     }//GEN-LAST:event_diaMenosVisitantesActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+        private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+                // TODO add your handling code here:
+        }//GEN-LAST:event_jButton1ActionPerformed
 
     
     public static void main(String args[]) {
@@ -208,11 +248,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
         private javax.swing.JButton diaMenosVisitantes;
         private javax.swing.JButton escMasVisitado;
         private javax.swing.JButton escMenosVisitado;
+        private javax.swing.JButton informacionEscenario;
         private javax.swing.JButton jButton1;
-        private javax.swing.JComboBox<String> jComboBox1;
         private javax.swing.JLabel jLabel1;
         private javax.swing.JMenu jMenu1;
-        private javax.swing.JButton masVisitasRestaurante;
         private javax.swing.JButton promedioVisitantes;
         private javax.swing.JSeparator separador;
         private javax.swing.JButton totalVisitantesEsc;
