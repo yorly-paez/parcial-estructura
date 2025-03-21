@@ -9,7 +9,7 @@ import java.time.Period;
 
 public class LinkedList {
 	Nodo head;
-	public String[] peliculas = {"Avatar", "Titanic", "Avengers Endgame"};
+	public String[] peliculas = {"Avatar", "Avengers Endgame", "Titanic"};
 	
 	LinkedList(){
 		head = null;
@@ -32,7 +32,7 @@ public class LinkedList {
 	public boolean validar(String documento){
 		Nodo temp = head;
 		while (temp != null){
-			if (temp.getEstudiante().getNombre().equals(documento)){
+			if (temp.getEstudiante().getDocumento().equals(documento)){
 				return true;
 			}
 			temp = temp.getEnlace();
@@ -46,7 +46,7 @@ public class LinkedList {
 		String nombre = "";
 		loop: 
 		while (temp != null){
-			if (temp.getEstudiante().getNombre().equals(documento)){
+			if (temp.getEstudiante().getDocumento().equals(documento)){
 				int[] entradas = temp.getCantEntradas();
 				for (int i = 0; i < entradas.length; i++){
 					acco += entradas[i];
@@ -56,7 +56,7 @@ public class LinkedList {
 			}
 			temp = temp.getEnlace();
 		}
-		return "Estudiante" + nombre + "\nEntradas adquiridas: " + acco;
+		return "Estudiante: " + nombre + "\nEntradas adquiridas: " + acco;
 	}
 	
 	public String peliConMasMujeres(){
@@ -83,7 +83,7 @@ public class LinkedList {
 			}
 		}
 		String message = "Película que más mujeres compraron: " 
-			+ peliculas[index] + " con un total de " + mayorCompra + "compras";
+			+ peliculas[index] + " con un total de " + mayorCompra + " compras";
 		return message;
 	}
 	
@@ -126,15 +126,8 @@ public class LinkedList {
 		return acco;
 	}
         
-        public int entradasVendidas(){
-            
-            return 1;
-        }
-
-    public String[] getPeliculas() {
-        return peliculas;
     }
         
         
 	
-}
+
